@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  svelte:
+    build: frontend
+    container_name: "lamden_frontend"
+    image: "kervinucf/svelte:lamden_casino_svelte"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.main.rule=Host(`futuregames.io`) || Host(`www.futuregames.io`)"
+      - "traefik.http.routers.main.entrypoints=web"
+    ports: 
+      - 5000:5000
+    networks:
+      - traefik-net
+
+
+
+  node:
+    build: backend
+    container_name: "lamden_backend"
+    image: "kervinucf/node:lamden_casino_node"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.main-api.rule=(Host(`futuregames.io`) && PathPrefix(`/api`)) || (Host(`www.futuregames.io`) && PathPrefix(`/api`))"
+      - "traefik.http.routers.main-api.entrypoints=web"
+    ports: 
+      - 3232:3232
+    networks:
+      - traefik-net
+
+networks:
+  traefik-net:
+

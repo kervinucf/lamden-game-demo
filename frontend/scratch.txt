@@ -1,0 +1,18 @@
+        
+
+
+
+        <div class="prizes" style="margin-left:auto;margin-right:auto;margin-top:1rem;text-align:center;cursor:pointer">
+        <div style="padding:.2rem;font-weight:bold;font-size:x-small">
+          <span>
+            4 in a row -> <span style="color:rgb(238, 234, 28)">2x</span> multiplier
+          </span>
+        </div>
+      </div>
+      <div class="prizes" style="margin-left:auto;margin-right:auto;margin-top:1rem;text-align:center;cursor:pointer">
+        <div style="padding:.2rem;font-weight:bold;font-size:x-small">
+          <span>
+          5 in a row -> <span style="color:rgb(238, 234, 28)">4x</span> multiplier
+          </span>
+        </div>
+      </div>
